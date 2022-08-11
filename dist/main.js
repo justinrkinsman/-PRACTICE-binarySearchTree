@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://binarysearchtree/./src/index.js?");
+eval("/*class Node\n{\n    constructor(d)\n    {\n        this.data = d;\n        this.left = null;\n        this.right = null;\n    }\n}\n \nvar root = null;\nfunction sortedArrayToBST(arr, start, end)\n{\n    if (start > end)\n    {\n        return null;\n    }\n    var mid = parseInt((start + end) / 2);\n    var node = new Node(arr[mid]);\n    node.left = sortedArrayToBST(arr, start, mid - 1);\n    node.right = sortedArrayToBST(arr, mid + 1, end);\n    return node;\n}\nfunction preOrder(node)\n{\n    if (node == null)\n    {\n        return;\n    }\n    document.write(node.data + \" \");\n    preOrder(node.left);\n    preOrder(node.right);\n}\n  \nvar arr = [1, 2, 3, 4, 5, 6, 7];\nvar n = arr.length;\nroot = sortedArrayToBST(arr, 0, n - 1);\ndocument.write(\"Preorder traversal of constructed BST<br>\");\npreOrder(root);*/\n\nlet array = [1, 2, 3, 4, 5, 6, 7]\n\nlet start = 0\nlet end = array.length - 1\nlet mid = (start+end)/2\n\nclass Node {\n    constructor(data){\n        this.data = data;\n        this.left = null;\n        this.right = null;\n    }\n}\n\n//# sourceURL=webpack://binarysearchtree/./src/index.js?");
 
 /***/ })
 
