@@ -14,7 +14,7 @@ class Node {
 
 class Tree {
     constructor(array){
-        this.root = buildTree()
+        this.root = sortArray(array)
     }
 }
 
@@ -23,7 +23,7 @@ function removeDuplicates(arr) {
     return newArr
 }
 
-function buildTree(arr) {
+function sortArray(arr) {
     arr.sort((a, b) => a - b)
     let array = removeDuplicates(arr)
     let start = 0
@@ -33,6 +33,19 @@ function buildTree(arr) {
     return root
 }
 
-console.log(buildTree([3, 3, 1, 1, 5, 8, 7, 8]))
+/*
+function sortedArrayToBST(arr, start, end){
+    if (start > end){
+        return null
+    }
+    let mid = Math.floor(start + end)/2
+    let node = new Node(arr[mid])
+    node.left = sortedArrayToBST(arr, start, mid - 1);
+    node.right = sortedArrayToBST(arr, mid + 1, end)
+}
 
-module.exports = buildTree
+*/
+
+//console.log(sortArray([3, 3, 1, 1, 5, 8, 7, 8]))
+
+module.exports = sortArray

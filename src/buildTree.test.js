@@ -1,9 +1,9 @@
-const buildTree = require("./buildTree.js");
+const sortArray = require("./buildTree.js");
 
 test('Initial test', () => {
     //let array = [5, 3, 4, 6, 1, 2]
     
-    function buildTreeTest(arr) {
+    function sortArrayTest(arr) {
         arr.sort((a, b) => a - b)
         let start = 0
         let end = arr.length - 1
@@ -11,13 +11,13 @@ test('Initial test', () => {
         let root = arr[mid]
         return root
     }
-    expect(buildTreeTest([5, 3, 4, 6, 1, 2])).toEqual(3)
+    expect(sortArrayTest([5, 3, 4, 6, 1, 2])).toEqual(3)
 })
 
 test('Test tree', () => {
     class Tree {
         constructor(arr){
-            this.root = buildTree(arr)
+            this.root = sortArray(arr)
         }
     }
     let testTree = new Tree([1, 2, 3, 4])
