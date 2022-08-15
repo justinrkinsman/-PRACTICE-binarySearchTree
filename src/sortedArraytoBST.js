@@ -47,10 +47,12 @@ function sortedArrayToBST(arr, start, end){
     if (start > end){
         return null
     }
-    let mid = Math.floor(start + end)/2
-    let node = new Node(arr[mid])
-    node.left = sortedArrayToBST(arr, start, mid - 1);
-    node.right = sortedArrayToBST(arr, mid + 1, end)
+    arr.sort((a, b) => a - b)
+    let array = removeDuplicates(arr)
+    let mid = Math.floor((start + end)/2)
+    let node = new Node(array[mid])
+    node.left = sortedArrayToBST(array, start, mid - 1);
+    node.right = sortedArrayToBST(array, mid + 1, end)
     return node
 }
 
