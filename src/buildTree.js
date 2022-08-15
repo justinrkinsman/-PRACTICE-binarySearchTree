@@ -18,9 +18,8 @@ class Tree {
     }
 }
 
-function buildTree(array) {
-    let index = Math.floor(array.length/2)
-    let root = array[index]
+function buildTree(arr) {
+    let root = arr[mid]
     return root
 }
 
