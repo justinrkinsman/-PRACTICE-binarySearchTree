@@ -1,15 +1,4 @@
-/*class Node
-{
-    constructor(d)
-    {
-        this.data = d;
-        this.left = null;
-        this.right = null;
-    }
-}
- 
-var root = null;
-function sortedArrayToBST(arr, start, end)
+/*function sortedArrayToBST(arr, start, end)
 {
     if (start > end)
     {
@@ -31,12 +20,12 @@ function preOrder(node)
     preOrder(node.left);
     preOrder(node.right);
 }
-  
-var arr = [1, 2, 3, 4, 5, 6, 7];
-var n = arr.length;
+
 root = sortedArrayToBST(arr, 0, n - 1);
 document.write("Preorder traversal of constructed BST<br>");
 preOrder(root);*/
+
+const { ModuleFilenameHelpers } = require("webpack");
 
 let array = [1, 2, 3, 4, 5, 6, 7]
 
@@ -51,3 +40,18 @@ class Node {
         this.right = null;
     }
 }
+
+class Tree {
+    constructor(array){
+        this.root = buildTree()
+    }
+}
+
+function buildTree(array) {
+    let root = array[array.length/2]
+    return root
+}
+
+//let root = null
+
+module.exports = buildTree
