@@ -1,11 +1,12 @@
-//const buildTree = require("./buildTree.js");
+const buildTree = require("./buildTree.js");
 
 test('Initial test', () => {
-    let array = [1, 2, 3, 4, 5, 6]
+    let array = [5, 3, 4, 6, 1, 2]
     let start = 0
     let end = array.length - 1
     let mid = Math.floor((start+end)/2)
     function buildTreeTest(arr) {
+        arr.sort((a, b) => a - b)
         let root = arr[mid]
         return root
     }

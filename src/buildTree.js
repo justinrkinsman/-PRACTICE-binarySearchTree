@@ -19,6 +19,7 @@ class Tree {
 }
 
 function buildTree(arr) {
+    arr.sort((a, b) => a - b)
     let root = arr[mid]
     return root
 }
