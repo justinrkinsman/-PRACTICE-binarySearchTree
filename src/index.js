@@ -125,10 +125,21 @@ function deleteRec(root, data) {
             return minv;
     }
     
-console.log(buildTree([2, 4, 1, 6, 7]))
-//let root = null
-console.log(useThisArr)
-console.log(insertRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 6))
-console.log(useThisArr)
+function find(root, data) {
+    if (data === root.data)   
+        return root
+    if (data < root.data)
+        find(root.left, data)
+    if (data > root.data)
+        find(root.right, data)
+}
+
+//console.log(buildTree([2, 4, 1, 6, 7]))
+//console.log(useThisArr)
+//console.log(insertRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 6))
+//console.log(useThisArr)
 //console.log(insertRec(sort))
-console.log(deleteRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 3))
+//console.log(deleteRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 3))
+
+console.log(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)))
+console.log(find(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 4))
