@@ -18,15 +18,21 @@ class Tree {
     }
 }
 
+function removeDuplicates(arr) {
+    let newArr = [...new Set(arr)]
+    return newArr
+}
+
 function buildTree(arr) {
     arr.sort((a, b) => a - b)
+    let array = removeDuplicates(arr)
     let start = 0
-    let end = arr.length - 1
+    let end = array.length - 1
     let mid = Math.floor((start+end)/2)
-    let root = arr[mid]
+    let root = array[mid]
     return root
 }
 
-console.log(buildTree)
+console.log(buildTree([3, 3, 1, 1, 5, 8, 7, 8]))
 
 module.exports = buildTree
