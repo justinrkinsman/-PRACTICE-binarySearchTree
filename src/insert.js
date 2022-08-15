@@ -19,4 +19,4 @@ function insertRec(root, key){
     return root
 }
 
-module.exports = insertRec
+//module.exports = insertRec

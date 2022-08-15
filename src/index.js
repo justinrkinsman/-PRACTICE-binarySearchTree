@@ -68,10 +68,12 @@ function sortedArrayToBST(arr, start, end){
 }
 
 //let tree = new Tree([100, 200, 300])
+let useThisArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
 
 function insertRec(root, key){
     if (root == null){
         root = new Node(key)
+        useThisArr.push(key)
         return root
     }
     if (key < root.data){
@@ -82,7 +84,51 @@ function insertRec(root, key){
     return root
 }
 
+function deleteRec(root, data) {
+    if (root == null)
+        return root;
+    
+    if (data < root.data)
+        root.left = deleteRec(root.left, data);
+    else if (data > root.data)
+        root.right = deleteRec(root.right, data);
+    
+    // if key is same as root's
+    // key, then This is the
+    // node to be deleted
+    else {
+    // node with only one child or no child
+    if (root.left == null)
+        return root.right;
+    else if (root.right == null)
+        return root.left;
+    
+    // node with two children: Get the inorder
+    // successor (smallest in the right subtree)
+    root.data = minValue(root.right);
+    
+    // Delete the inorder successor
+    root.right = deleteRec(root.right, root.data);
+    }
+    
+    return root;
+    }
+    
+    function minValue(root)
+    {
+        let minv = root.data;
+            while (root.left != null)
+            {
+                minv = root.left.data;
+                root = root.left;
+            }
+            return minv;
+    }
+    
 console.log(buildTree([2, 4, 1, 6, 7]))
-let useThisArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
 //let root = null
+console.log(useThisArr)
 console.log(insertRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 6))
+console.log(useThisArr)
+//console.log(insertRec(sort))
+console.log(deleteRec(sortedArrayToBST(useThisArr, 0, (useThisArr.length - 1)), 3))
