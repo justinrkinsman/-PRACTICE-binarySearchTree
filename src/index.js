@@ -25,8 +25,6 @@ root = sortedArrayToBST(arr, 0, n - 1);
 document.write("Preorder traversal of constructed BST<br>");
 preOrder(root);*/
 
-const { ModuleFilenameHelpers } = require("webpack");
-
 let array = [1, 2, 3, 4, 5, 6, 7]
 
 let start = 0
